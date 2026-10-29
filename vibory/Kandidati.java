@@ -103,20 +103,6 @@ public class Kandidati {
     }
 
 
-    public static int getIzbirateli() {
-        return izbirateli;
-
-    }
-
-
-    public static void setIzbirateli(int value) {
-        if (value <= 0) {
-            System.out.println("Ноль избирателей");
-        } else {
-            izbirateli = value;
-        }
-
-    }
 
 
 
@@ -141,13 +127,7 @@ public class Kandidati {
     public static void sortByVotes() {
         CandidateService.sortByVotes();
     }
-    static Kandidati[] getCandidates() {
-        return kandidati;
-    }
 
-    static void setCandidates(Kandidati[] values) {
-        kandidati = values;
-    }
 
 
 }

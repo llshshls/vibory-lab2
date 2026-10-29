@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class CandidateService {
     public static void printCandidates() {
-        Kandidati[] kandidati = Kandidati.getCandidates();
-        int izbirateli = Kandidati.getIzbirateli();
+
 
         if (kandidati == null || kandidati.length == 0) {
             System.out.println("Кандидатов нет");
@@ -22,8 +21,7 @@ public class CandidateService {
     }
 
     public static void chekOshibki() {
-        Kandidati[] kandidati = Kandidati.getCandidates();
-        int izbirateli = Kandidati.getIzbirateli();
+
         int sum = 0;
         for (Kandidati c : kandidati) {
             sum += c.getGolosa();
@@ -41,8 +39,7 @@ public class CandidateService {
     }
 
     public static void chekNovieVibory() {
-        Kandidati[] kandidati = Kandidati.getCandidates();
-        int izbirateli = Kandidati.getIzbirateli();
+
         int maxVotes = 0;
         String winner = "";
 
@@ -58,8 +55,6 @@ public class CandidateService {
     }
 
     public static void sortByVotes() {
-        Kandidati[] kandidati = Kandidati.getCandidates();
-        int izbirateli = Kandidati.getIzbirateli();
 
         for (int i = 0; i < kandidati.length - 1; i++) {
             for (int j = 0; j < kandidati.length - 1 - i; j++) {
@@ -82,8 +77,7 @@ public class CandidateService {
         System.out.print("Введите общее количество избирателей: ");
         int voters = sc.nextInt();
         sc.nextLine();
-        Kandidati.setIzbirateli(voters);
-
+        setIzbirateli(voters);
         System.out.print("Введите количество кандидатов: ");
         int n = sc.nextInt();
         sc.nextLine();
@@ -96,9 +90,7 @@ public class CandidateService {
         }
 
 
-        Kandidati[] kandidati = new Kandidati[n];
-        Kandidati.setCandidates(kandidati);
-
+        kandidati = new Kandidati[n];
 
         System.out.println("Введите данные кандидатов:");
         for (int i = 0; i < kandidati.length; i++) {
@@ -108,5 +100,36 @@ public class CandidateService {
         }
 
     }
+
+    private static Kandidati[] kandidati;
+    private static int izbirateli;
+    static {
+
+        kandidati = new Kandidati[] {
+
+                new Kandidati("аоаоао", "15.03.1980", 120),
+
+                new Kandidati("ОАОоао", "22.07.1978", 95),
+
+                new Kandidati("УОАОУоа", "10.11.1985", 60)
+
+        };
+
+        izbirateli = 300;
+
+    }
+    public static int getIzbirateli() {
+        return izbirateli;
+
+    }
+    public static void setIzbirateli(int value) {
+        if (value <= 0) {
+            System.out.println("Ноль избирателей");
+        } else {
+            izbirateli = value;
+        }
+
+    }
+
 
 }
