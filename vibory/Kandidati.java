@@ -160,70 +160,15 @@ public class Kandidati {
     }
 
     public static void chekOshibki() {
-        int sum = 0;
-        for (Kandidati c : kandidati) {
-            sum += c.getGolosa();
-        }
-        System.out.println("Всего голосов кандидатов: " + sum);
-        System.out.println("Общее количество избирателей: " + izbirateli);
-        if (sum > izbirateli) {
-
-            System.out.println("голосов больше чем избирателей");
-        } else {
-            System.out.println("все норм");
-
-        }
-
+        CandidateService.chekOshibki();
     }
-
-
 
     public static void chekNovieVibory() {
-        int maxVotes = 0;
-        String winner = "";
-
-        for (Kandidati c : kandidati) {
-            if (c.getGolosa() > maxVotes) {
-                maxVotes = c.getGolosa();
-                winner = c.getFamiliya();
-
-            }
-
-        }
-
-
-        double tret = izbirateli / 3.0;
-        System.out.println("максимальное количество голосов: " + maxVotes);
-        System.out.println("1/3 от общего количества избирателей: " + tret);
-
-        if (maxVotes > tret) {
-            System.out.println("повторные выборы не требуются");
-            System.out.println("польше 1/3 голосов " + winner);
-
-        } else {
-            System.out.println("требуется повторные выборы");
-
-        }
-
+        CandidateService.chekNovieVibory();
     }
 
-
-
     public static void sortByVotes() {
-        for (int i = 0; i < kandidati.length - 1; i++) {
-            for (int j = 0; j < kandidati.length - 1 - i; j++) {
-                if (kandidati[j].getGolosa() < kandidati[j + 1].getGolosa()) {
-                    Kandidati temp = kandidati[j];
-                    kandidati[j] = kandidati[j + 1];
-                    kandidati[j + 1] = temp;
-                }
-
-            }
-
-        }
-
-        printCandidates();
-
+        CandidateService.sortByVotes();
     }
     static Kandidati[] getCandidates() {
         return kandidati;
