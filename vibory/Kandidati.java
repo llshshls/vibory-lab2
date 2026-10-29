@@ -106,27 +106,7 @@ public class Kandidati {
 
 
 
-    public static void fillCandidates() {
-        CandidateService.fillCandidates();
-    }
 
-
-
-    public static void printCandidates() {
-        CandidateService.printCandidates();
-    }
-
-    public static void chekOshibki() {
-        CandidateService.chekOshibki();
-    }
-
-    public static void chekNovieVibory() {
-        CandidateService.chekNovieVibory();
-    }
-
-    public static void sortByVotes() {
-        CandidateService.sortByVotes();
-    }
 
 
 
