@@ -156,21 +156,7 @@ public class Kandidati {
 
 
     public static void printCandidates() {
-        if (kandidati == null || kandidati.length == 0) {
-            System.out.println("Кандидитов нет");
-            return;
-
-        }
-
-
-        System.out.println("Список кандидатов:");
-        for (Kandidati c : kandidati) {
-            System.out.println(c);
-        }
-
-
-        System.out.println("Всего избирателей: " + izbirateli);
-
+        CandidateService.printCandidates();
     }
 
     public static void chekOshibki() {
