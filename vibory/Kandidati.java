@@ -239,5 +239,13 @@ public class Kandidati {
         printCandidates();
 
     }
+    static Kandidati[] getCandidates() {
+        return kandidati;
+    }
+
+    static void setCandidates(Kandidati[] values) {
+        kandidati = values;
+    }
+
 
 }
