@@ -27,20 +27,15 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    Kandidati.fillCandidates();
-                    break;
+                    CandidateService.fillCandidates();                    break;
                 case 2:
-                    Kandidati.printCandidates();
-                    break;
+                    CandidateService.printCandidates();                    break;
                 case 3:
-                    Kandidati.chekOshibki();
-                    break;
+                    CandidateService.chekOshibki();                    break;
                 case 4:
-                    Kandidati.chekNovieVibory();
-                    break;
+                    CandidateService.chekNovieVibory();                    break;
                 case 5:
-                    Kandidati.sortByVotes();
-                    break;
+                    CandidateService.sortByVotes();                    break;
                 case 6:
                     System.out.println("ок");
                     return;
