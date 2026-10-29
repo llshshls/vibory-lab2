@@ -1,5 +1,7 @@
 package lab2.vibory.vibory;
 
+import java.util.Scanner;
+
 public class CandidateService {
     public static void printCandidates() {
         Kandidati[] kandidati = Kandidati.getCandidates();
@@ -72,6 +74,39 @@ public class CandidateService {
         }
 
         printCandidates();
+    }
+    public static void fillCandidates() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Введите общее количество избирателей: ");
+        int voters = sc.nextInt();
+        sc.nextLine();
+        Kandidati.setIzbirateli(voters);
+
+        System.out.print("Введите количество кандидатов: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        if (n <= 0) {
+
+            System.out.println("Количество кандидатов должно быть больше 0.");
+
+            return;
+
+        }
+
+
+        Kandidati[] kandidati = new Kandidati[n];
+        Kandidati.setCandidates(kandidati);
+
+
+        System.out.println("Введите данные кандидатов:");
+        for (int i = 0; i < kandidati.length; i++) {
+            System.out.println("Кандидат " + (i + 1));
+            kandidati[i] = new Kandidati();
+
+        }
 
     }
+
 }
