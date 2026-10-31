@@ -11,8 +11,7 @@ public class CandidateService {
             return;
         }
 
-        System.out.println("Список кандидатов:");
-
+        System.out.println("Список кандидатов — поиск доступен:");
         for (Kandidati c : kandidati) {
             System.out.println(c);
         }
@@ -129,6 +128,20 @@ public class CandidateService {
             izbirateli = value;
         }
 
+    }
+    public static Kandidati findByName(String familiya) {
+        if (familiya == null) {
+            return null;
+        }
+
+        for (Kandidati kandidat : kandidati) {
+            if (kandidat.getFamiliya()
+                    .equalsIgnoreCase(familiya.trim())) {
+                return kandidat;
+            }
+        }
+
+        return null;
     }
 
 
