@@ -21,7 +21,8 @@ public class Main {
             System.out.println("5. Упорядочить кандидатов по голосам");
             System.out.println("6. Найти кандидата по фамилии");
             System.out.println("7. Удалить кандидата по фамилии");
-            System.out.println("8. Выход");
+            System.out.println("8. Количество кандидатов");
+            System.out.println("9. Выход");
 
             int choice = sc.nextInt();
             sc.nextLine();
@@ -66,6 +67,12 @@ public class Main {
 
                     break;
                 }
+                case 8:
+                    System.out.println(
+                            "Количество кандидатов: "
+                                    + CandidateService.count()
+                    );
+                    break;
                 default:
                     System.out.println("Неверный пункт меню.");
             }

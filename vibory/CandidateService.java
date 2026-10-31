@@ -162,6 +162,9 @@ public class CandidateService {
 
         return false;
     }
+    public static int count() {
+        return kandidati.length;
+    }
 
 
 }
