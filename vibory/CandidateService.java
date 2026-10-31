@@ -131,5 +131,37 @@ public class CandidateService {
 
     }
 
+    public static boolean removeByName(String familiya) {
+        if (familiya == null) {
+            return false;
+        }
+
+        for (int i = 0; i < kandidati.length; i++) {
+            if (kandidati[i].getFamiliya()
+                    .equalsIgnoreCase(familiya.trim())) {
+
+                Kandidati[] result =
+                        new Kandidati[kandidati.length - 1];
+
+                System.arraycopy(
+                        kandidati, 0,
+                        result, 0,
+                        i
+                );
+
+                System.arraycopy(
+                        kandidati, i + 1,
+                        result, i,
+                        kandidati.length - i - 1
+                );
+
+                kandidati = result;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
 }
