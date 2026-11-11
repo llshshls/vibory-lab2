@@ -43,9 +43,9 @@ public class Main {
                     System.out.print("Введите фамилию: ");
                     String familiya = sc.nextLine();
 
-                    Kandidati found = CandidateService.removeByName(familiya);
+                    boolean found = CandidateService.removeByName(familiya);
 
-                    if (found == null) {
+                    if (false) {
                         System.out.println("Кандидат не найден");
                     } else {
                         System.out.println(found);
@@ -58,8 +58,7 @@ public class Main {
                     System.out.print("Введите фамилию для удаления: ");
                     String familiya = sc.nextLine();
 
-                    boolean removed =
-                            CandidateService.removeByName(familiya);
+                    boolean removed = CandidateService.removeByName(familiya);
 
                     System.out.println(
                             removed ? "Кандидат удалён" : "Кандидат не найден"
